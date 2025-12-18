@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veículos — Tá Na Mão</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- NAVBAR (Barra de Navegação Principal)-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!--Cria a barra de navegação. -->
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="assets/img/layout/logo.jpeg" alt="Logo Tá Na Mão" style="height:36px; margin-right:8px;">
+      <span>Tá Na Mão</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+    aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item d-none" id="navResidencias"><a class="nav-link" href="residencias.html">Residências</a></li>
+        <li class="nav-item d-none" id="navVeiculos"><a class="nav-link" href="veiculos.html">Veículos</a></li>
+
+        <li class="nav-item d-none" id="navReservas"><a class="nav-link" href="reservas.html">Minhas Reservas</a></li>
+        <li class="nav-item d-none" id="navSobre"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item d-none" id="navLogout"><a class="nav-link" href="#" id="linkLogout">Sair</a></li>
+
+        <li class="nav-item" id="navLogin"><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- HEADER / FILTROS -->
+  <header class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-1">Veículos disponíveis</h2>
+      <p class="text-muted mb-3">Filtre por tipo, câmbio ou faixa de preço. Clique em reservar para abrir o modal.</p>
+
+      <form id="filterCarsForm" class="row g-2 align-items-center">
+        <div class="col-sm-4">
+          <select id="filterType" class="form-select">
+            <option value="">Tipo</option>
+            <option value="carro">Carro</option>
+            <option value="suv">SUV</option>
+            <option value="moto">Moto</option>
+            <option value="van">Van</option>
+          </select>
+        </div>
+        <div class="col-sm-4">
+          <select id="filterTrans" class="form-select">
+            <option value="">Câmbio</option>
+            <option value="manual">Manual</option>
+            <option value="automatico">Automático</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <select id="filterCarPrice" class="form-select">
+            <option value="">Preço</option>
+            <option value="low">Até R$120</option>
+            <option value="mid">R$120 - R$250</option>
+            <option value="high">Acima de R$250</option>
+          </select>
+        </div>
+        <div class="col-auto">
+          <button id="btnFilterCars" type="button" class="btn btn-primary">Filtrar</button>
+        </div>
+      </form>
+    </div>
+  </header>
+
+  <!-- LISTA DE VEÍCULOS -->
+  <main class="container py-4">
+    <div id="carsList" class="row g-4">
+      <div class="col-md-4 vehicle-card" data-type="carro" data-trans="manual" data-price="mid">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/img/veiculos/car1.png" class="card-img-top" alt="Hatch compacto">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Hatch compacto</h5>
+            <p class="card-text text-muted mb-2">Até 5 passageiros • Ar-condicionado • Manual</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <span class="badge bg-primary">Carro</span>
+              <div class="fw-bold">R$ 170 / dia</div>
+            </div>
+            <button class="btn btn-sm btn-primary mt-3 btn-reservar-veiculo" data-item="Hatch compacto">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 vehicle-card" data-type="suv" data-trans="automatico" data-price="high">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/img/veiculos/car2.png" class="card-img-top" alt="SUV confortável">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">SUV confortável</h5>
+            <p class="card-text text-muted mb-2">7 lugares • Automático • Ideal para viagens</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">SUV</span>
+              <div class="fw-bold">R$ 320 / dia</div>
+            </div>
+            <button class="btn btn-sm btn-primary mt-3 btn-reservar-veiculo" data-item="SUV confortável">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 vehicle-card" data-type="moto" data-trans="manual" data-price="low">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/img/veiculos/moto1.png" class="card-img-top" alt="Moto econômica">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Moto econômica</h5>
+            <p class="card-text text-muted mb-2">Ideal para deslocamentos urbanos</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <span class="badge bg-warning text-dark">Moto</span>
+              <div class="fw-bold">R$ 80 / dia</div>
+            </div>
+            <button class="btn btn-sm btn-primary mt-3 btn-reservar-veiculo" data-item="Moto econômica">Reservar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal de reserva (versão atualizada) -->
+  <div class="modal fade" id="rentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="rentForm" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title">Reservar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+
+          <div class="modal-body">
+            <p id="rentItemName" class="fw-semibold"></p>
+
+            <div class="mb-3">
+              <label for="renterName" class="form-label">Nome completo</label>
+              <input type="text" id="renterName" class="form-control" required>
+              <div class="invalid-feedback">Informe seu nome.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="renterEmail" class="form-label">E-mail</label>
+              <input type="email" id="renterEmail" class="form-control" placeholder="seu@exemplo.com" required>
+              <div class="invalid-feedback">Informe um e-mail válido.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="renterPhone" class="form-label">Telefone</label>
+              <input type="tel" id="renterPhone" class="form-control" placeholder="(88) 9xxxx-xxxx" required>
+              <div class="invalid-feedback">Informe um telefone.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="renterCPF" class="form-label">CPF (opcional)</label>
+              <input type="text" id="renterCPF" class="form-control" placeholder="000.000.000-00">
+            </div>
+
+            <div class="row g-2">
+              <div class="col">
+                <label for="startDate" class="form-label">Data de retirada</label>
+                <input type="date" id="startDate" class="form-control" required>
+              </div>
+              <div class="col">
+                <label for="endDate" class="form-label">Data de devolução</label>
+                <input type="date" id="endDate" class="form-control" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Confirmar reserva</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  if (!localStorage.getItem('usuarioLogado')) {
+    window.location.href = 'login.html';
+  }
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer-ta-na-mao text-center">
+    <p class="m-0 py-2">© 2025 Tá Na Mão — Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
