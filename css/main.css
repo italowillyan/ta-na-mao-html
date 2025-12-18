@@ -1,0 +1,158 @@
+:root{
+  --brand: #ffca2c;
+  --dark-bg: #0b0b0d;
+}
+
+/* RESET SIMPLES */
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f8f9fa;
+  color: #222;
+}
+
+/* HERO */
+#banner{
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("../assets/img/layout/hero.jpg") center 75% / cover no-repeat;
+  min-height: 83.9vh;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 56px;
+}
+
+/* IMAGEM LATERAL (reduzida e com leve sombra) */
+.hero-side-img {
+  max-width: 340px;    /* tamanho padrão ajustado */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transform: translateY(0);
+}
+
+/* CENTRALIZAR COLUNAS */
+#banner .col-lg-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 991px) {
+  .hero-side-img { max-width: 300px; }
+}
+
+@media (max-width: 767px){
+  #banner{
+    min-height: 60vh;
+    padding: 80px 18px 40px;
+    background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url("../assets/img/layout/hero.jpg") center / cover no-repeat;
+  }
+  .hero-side-img { max-width: 220px; margin-top: 20px; }
+  .btn-alugue{ width: 100%; text-align:center; }
+}
+
+/* FOOTER FINO */
+.footer-ta-na-mao {
+  background: #212529;           /* mesma cor da navbar */
+  color: #fff;                   /* texto branco */
+  width: 100%;
+  font-size: 0.9rem;             /* leve e fino */
+  border-top: 1px solid #2c3237; /* linha suave */
+}
+
+.footer-ta-na-mao p {
+  padding: 6px 0 !important;    /* deixa o rodapé fino */
+  margin: 0 !important;
+}
+
+.servico-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.15);
+}
+
+.servicos h5 {
+  color: #212529;
+}
+
+.servicos p {
+  font-size: 0.9rem;
+}
+
+/* CARDS DA PÁGINA INICIAR */
+.explore {
+  background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(245,247,250,1) 100%);
+}
+.explore h3 { font-size: 1.9rem; margin-bottom: .4rem; }
+.explore .explore-btn {
+  gap: 0.75rem;
+  padding: 14px 20px;
+  border-radius: 12px;
+  min-width: 240px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.explore .explore-btn:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,0.12); }
+.btn-outline-primary.explore-btn { background: #fff; border-color: #cfe2ff; color: #0d6efd; }
+.explore small { display:block; color: #6c757d; }
+@media (max-width: 991px){
+  .explore .explore-btn { min-width: 100%; justify-content: flex-start; }
+  .explore .col-lg-4 { display: none !important; }
+}
+
+/* PÁGINA DE ALUGUEL DE RESIDÊNCIAS */
+.house-card .card-img-top,
+.vehicle-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* PÁGINA DE ALUGUEL DE VEÍCULOS */
+.vehicle-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* PÁGINA DE RESERVAS */
+#reservationsContainer .card { border-radius: 10px; }
+#reservationsContainer .card .card-body { padding: 1rem; }
+
+
+/* FOOTER FIXADO NO FUNDO DA TELA */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* empurra o footer para o fundo */
+}
+
+.footer-ta-na-mao {
+  background: #111;
+  color: #fff;
+}
