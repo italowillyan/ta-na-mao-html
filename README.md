@@ -1,27 +1,48 @@
-# 🌐 Ta na Mão HTML
+# 🖐️ Tá na Mão — HTML
 
-🔗 Acesse o site: https://italowillyan.github.io/ta-na-mao-html
+🔗 **Site:**  
+https://italowillyan.github.io/ta-na-mao-html
 
-## 📌 Sobre
+---
 
-**Ta na Mão HTML** é um site estático criado com HTML, hospedado gratuitamente usando **GitHub Pages**.  
-Ele foi desenvolvido para demonstrar conhecimentos de HTML e servir como portfólio ou experimento de web design. :contentReference[oaicite:1]{index=1}
+## 📄 Sobre
 
-## 🚀 Visão Geral
+Este repositório contém os arquivos do site **Tá na Mão**, desenvolvido em **HTML** e hospedado através do **GitHub Pages**.
 
-Este projeto contém:
+Todas as informações sobre o projeto, funcionamento e objetivo estão disponíveis diretamente no site.
 
-- 📄 Páginas HTML estáticas  
-- 🎨 Layout simples e funcional  
-- 🖥️ Sem dependências externas (CSS/JS básicos ou internos)
+---
 
-🧠 Ideal para aprender ou demonstrar noções básicas de desenvolvimento web com HTML.
+## 📁 Conteúdo do repositório
 
-## 🎯 Funcionalidades
+- Arquivos HTML do site
+- Recursos visuais (imagens, estilos e scripts)
+- Estrutura necessária para publicação no GitHub Pages
 
-- ✨ Visualização direta no navegador
-- 📦 Estrutura simples
-- 📡 Hospedado no GitHub Pages
+---
 
-## 📁 Estrutura do Repositório
+## 🌐 Acesso
 
+O site pode ser acessado pelo link abaixo:
+
+👉 https://italowillyan.github.io/ta-na-mao-html
+
+---
+
+## 🛠️ Tecnologias
+
+- HTML5  
+- GitHub Pages  
+
+---
+
+## 👨‍💻 Autor
+
+**Ítalo Willyan**
+**Mosani Neto**
+**Nicolas Santos**
+IFRN Currais Novos — Informática
+
+---
+
+📌 Projeto mantido para fins educacionais e de prática em desenvolvimento web.
