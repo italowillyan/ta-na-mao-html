@@ -38,9 +38,9 @@ O site pode ser acessado pelo link abaixo:
 
 ## 👨‍💻 Autor
 
-**Ítalo Willyan**
-**Mosani Neto**
-**Nicolas Santos**
+**Ítalo Willyan**,
+**Mosani Neto**,
+**Nicolas Santos**,
 IFRN Currais Novos — Informática
 
 ---
