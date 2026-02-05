@@ -1,10 +1,8 @@
 // js/main.js - centralizado e organizado para Tá Na Mão
 
-/* ===========================
-   UTILIDADES GLOBAIS
-   =========================== */
+/* UTILIDADES GERAIS */
 
-// Função de busca (global)
+// Função de busca principal
 function buscar() {
   const campo = document.getElementById('campoBusca');
   const texto = (campo ? campo.value : '').trim().toLowerCase();
@@ -30,7 +28,7 @@ function buscar() {
   alert(`Busca simulada: você procurou por "${texto}".`);
 }
 
-// Marca o link ativo na navbar
+// Define automaticamente o link ativo do navbar
 function setupNavActive() {
   const links = document.querySelectorAll('.nav-link');
   const page = location.pathname.split('/').pop() || 'index.html';
@@ -44,9 +42,7 @@ function setupNavActive() {
   });
 }
 
-/* ===========================
-   HOME / BUSCA
-   =========================== */
+/* Configuração do que acontecer na página inicial */
 
 function setupHomeSearch() {
   const btn = document.getElementById('btnBuscarHome');
@@ -64,10 +60,8 @@ function setupHomeSearch() {
   }
 }
 
-/* ===========================
-   RESIDÊNCIAS
-   =========================== */
-
+/* RESIDÊNCIAS */
+/* Controlar os filtros e reservas da parte das residências */
 function setupResidenciasPage() {
   const btnFilter = document.getElementById('btnFilter');
   if (!btnFilter) return;
@@ -93,10 +87,8 @@ function setupResidenciasPage() {
   });
 }
 
-/* ===========================
-   VEÍCULOS
-   =========================== */
-
+/* VEÍCULOS */
+/* de mesmo funcionamento da aba das residências, mesma lógica mas com outra coisa para alugar */
 function setupVeiculosPage() {
   const btnFilter = document.getElementById('btnFilterCars');
   if (!btnFilter) return;
@@ -122,10 +114,8 @@ function setupVeiculosPage() {
   });
 }
 
-/* ===========================
-   MODAL / RESERVA
-   =========================== */
-
+/* MODAL / RESERVA */
+/* Abrir o modal do bootstrap */
 function abrirModalReserva(item) {
   const modalEl = document.getElementById('rentModal');
   if (!modalEl) return;
@@ -137,6 +127,7 @@ function abrirModalReserva(item) {
   new bootstrap.Modal(modalEl).show();
 }
 
+/* Organiza o envio das reservas, através dos formulários */
 function setupRentForm() {
   const form = document.getElementById('rentForm');
   if (!form) return;
@@ -184,10 +175,8 @@ function setupRentForm() {
   });
 }
 
-/* ===========================
-   NAVBAR / LOGIN
-   =========================== */
-
+/* NAVBAR / LOGIN */
+/* Define o que deve aparecer na aba de navegação (o navbar) ao ser feito o login) */
 function setupNavbarLoginState() {
   const logged = localStorage.getItem('usuarioLogado') === 'true';
 
@@ -212,10 +201,8 @@ function setupNavbarLoginState() {
   }
 }
 
-/* ===========================
-   BOTÃO "ALUGUE JÁ"
-   =========================== */
-
+/* BOTÃO "ALUGUE JÁ" */
+/* Define que o botão só aparece quando o login não foi efetuado */
 function setupAlugueJaButton() {
   const btn = document.getElementById('btnAlugueJa');
   if (!btn) return;
@@ -224,9 +211,8 @@ function setupAlugueJaButton() {
   btn.classList.toggle('d-none', logged);
 }
 
-/* ===========================
-   INICIALIZAÇÃO ÚNICA
-   =========================== */
+/* INICIALIZAÇÃO ÚNICA */
+/* Garantir que os códigos, principalmente o html rode normal e automaticamente */
 
 document.addEventListener('DOMContentLoaded', () => {
   setupNavActive();
@@ -237,3 +223,4 @@ document.addEventListener('DOMContentLoaded', () => {
   setupNavbarLoginState();
   setupAlugueJaButton();
 });
+
